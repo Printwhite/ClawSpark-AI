@@ -10,44 +10,23 @@ permissions:
   contents: write
 
 jobs:
-  build-and-release:
-    runs-on: windows-latest
+  publish:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: npm
-
-      - name: Install Dependencies
-        run: npm ci --no-audit --no-fund
-
-      - name: Build Windows EXE (Retry 3x)
-        shell: pwsh
+      - name: Verify Release Assets
         run: |
-          $success = $false
-          for ($i = 1; $i -le 3; $i++) {
-            Write-Host "Build attempt $i/3..."
-            npx electron-builder --win
-            if ($LASTEXITCODE -eq 0) {
-              $success = $true
-              break
-            }
-            Start-Sleep -Seconds 20
-          }
-          if (-not $success) {
-            throw "electron-builder failed after 3 attempts"
-          }
+          ls -lah release-assets
+          test -f release-assets/ClawSpark-AI-Setup-1.0.3.exe
 
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            dist/*.exe
-            dist/*.blockmap
+            release-assets/*.exe
+            release-assets/*.blockmap
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
