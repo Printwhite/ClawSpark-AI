@@ -23,7 +23,7 @@ jobs:
           cache: npm
 
       - name: Install Dependencies
-        run: npm ci
+        run: npm ci --no-audit --no-fund
 
       - name: Build Windows EXE (Retry 3x)
         shell: pwsh
@@ -31,7 +31,7 @@ jobs:
           $success = $false
           for ($i = 1; $i -le 3; $i++) {
             Write-Host "Build attempt $i/3..."
-            npm run build:win
+            npx electron-builder --win
             if ($LASTEXITCODE -eq 0) {
               $success = $true
               break

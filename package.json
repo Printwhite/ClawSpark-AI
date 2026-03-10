@@ -1,6 +1,6 @@
 {
   "name": "clawspark-installer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ClawSpark AI 极速安装器 - 面向新手用户的 OpenClaw 桌面安装向导",
   "main": "src/main.js",
   "scripts": {
