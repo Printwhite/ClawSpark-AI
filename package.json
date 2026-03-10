@@ -1,7 +1,7 @@
 {
   "name": "clawspark-installer",
-  "version": "1.0.2",
-  "description": "ClawSpark AI 极速安装器 - 面向新手用户的 OpenClaw 桌面安装向导",
+  "version": "1.0.3",
+  "description": "ClawSpark AI 鏋侀€熷畨瑁呭櫒 - 闈㈠悜鏂版墜鐢ㄦ埛鐨?OpenClaw 妗岄潰瀹夎鍚戝",
   "main": "src/main.js",
   "scripts": {
     "start": "electron .",
@@ -12,7 +12,7 @@
   },
   "build": {
     "appId": "com.clawspark.installer",
-    "productName": "ClawSpark AI 极速安装器",
+    "productName": "ClawSpark AI Installer",
     "directories": {
       "output": "dist"
     },
@@ -22,7 +22,9 @@
     ],
     "win": {
       "target": "nsis",
-      "signAndEditExecutable": false
+      "signAndEditExecutable": false,
+      "artifactName": "ClawSpark-AI-Setup-${version}.${ext}",
+      "executableName": "ClawSpark-AI-Installer"
     },
     "mac": {
       "target": "dmg",
