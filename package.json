@@ -1,0 +1,47 @@
+{
+  "name": "clawspark-installer",
+  "version": "1.0.0",
+  "description": "ClawSpark AI 极速安装器 - 面向新手用户的 OpenClaw 桌面安装向导",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "set ELECTRON_BUILDER_BINARIES_MIRROR=https://npmmirror.com/mirrors/electron-builder-binaries/&& electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux",
+    "build:all": "electron-builder --win --mac --linux"
+  },
+  "build": {
+    "appId": "com.clawspark.installer",
+    "productName": "ClawSpark AI 极速安装器",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "signAndEditExecutable": false
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns",
+      "category": "public.app-category.utilities"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": false
+    }
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "author": "OpenClaw Community",
+  "license": "MIT"
+}
