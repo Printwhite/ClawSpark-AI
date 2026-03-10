@@ -1,0 +1,54 @@
+<svg width="1200" height="640" viewBox="0 0 1200 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B5CFF"/>
+      <stop offset="1" stop-color="#00A6FF"/>
+    </linearGradient>
+    <linearGradient id="card" x1="180" y1="140" x2="1020" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#F3F8FF" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="640" fill="url(#bg)"/>
+  <circle cx="1120" cy="80" r="180" fill="#FFFFFF" fill-opacity="0.09"/>
+  <circle cx="80" cy="560" r="210" fill="#FFFFFF" fill-opacity="0.08"/>
+
+  <rect x="140" y="90" width="920" height="460" rx="28" fill="url(#card)"/>
+
+  <text x="210" y="190" fill="#0F1E3D" font-size="52" font-weight="700" font-family="Segoe UI, PingFang SC, Microsoft YaHei, sans-serif">
+    ClawSpark AI Installer
+  </text>
+  <text x="210" y="238" fill="#2A3E66" font-size="28" font-weight="500" font-family="Segoe UI, PingFang SC, Microsoft YaHei, sans-serif">
+    面向中文用户的 OpenClaw 极速安装向导
+  </text>
+
+  <rect x="210" y="290" width="360" height="52" rx="12" fill="#0B5CFF"/>
+  <text x="238" y="324" fill="#FFFFFF" font-size="24" font-weight="600" font-family="Segoe UI, PingFang SC, Microsoft YaHei, sans-serif">
+    3 分钟完成安装
+  </text>
+
+  <rect x="210" y="366" width="360" height="52" rx="12" fill="#EAF2FF"/>
+  <text x="238" y="400" fill="#1A3F8A" font-size="24" font-weight="600" font-family="Segoe UI, PingFang SC, Microsoft YaHei, sans-serif">
+    无 VPN 友好
+  </text>
+
+  <rect x="210" y="442" width="360" height="52" rx="12" fill="#EAF2FF"/>
+  <text x="238" y="476" fill="#1A3F8A" font-size="24" font-weight="600" font-family="Segoe UI, PingFang SC, Microsoft YaHei, sans-serif">
+    自定义供应商 + 一键卸载
+  </text>
+
+  <rect x="630" y="288" width="330" height="206" rx="16" fill="#FFFFFF"/>
+  <text x="658" y="334" fill="#0F1E3D" font-size="22" font-weight="700" font-family="Segoe UI, PingFang SC, Microsoft YaHei, sans-serif">
+    Supported Providers
+  </text>
+  <text x="658" y="372" fill="#2A3E66" font-size="18" font-family="Segoe UI, PingFang SC, Microsoft YaHei, sans-serif">
+    DeepSeek / Anthropic / OpenAI
+  </text>
+  <text x="658" y="404" fill="#2A3E66" font-size="18" font-family="Segoe UI, PingFang SC, Microsoft YaHei, sans-serif">
+    Gemini / OpenRouter / Ollama
+  </text>
+  <text x="658" y="446" fill="#0B5CFF" font-size="18" font-weight="700" font-family="Segoe UI, PingFang SC, Microsoft YaHei, sans-serif">
+    Custom Provider Ready
+  </text>
+</svg>

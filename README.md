@@ -1,47 +1,53 @@
-﻿# ClawSpark AI 极速安装器
+# ClawSpark AI Installer
 
-一个面向新手的 OpenClaw 图形化安装器。
+一个面向中文用户的 OpenClaw 图形化安装器。  
+目标是把“复杂安装”变成“3 分钟完成”。
 
-目标只有一个：让用户在无 VPN 网络下，也能稳定安装、配置并启动 OpenClaw。
+[![GitHub stars](https://img.shields.io/github/stars/Printwhite/ClawSpark-AI?style=for-the-badge)](https://github.com/Printwhite/ClawSpark-AI/stargazers)
+[![GitHub release](https://img.shields.io/github/v/release/Printwhite/ClawSpark-AI?style=for-the-badge)](https://github.com/Printwhite/ClawSpark-AI/releases)
+[![GitHub issues](https://img.shields.io/github/issues/Printwhite/ClawSpark-AI?style=for-the-badge)](https://github.com/Printwhite/ClawSpark-AI/issues)
+[![GitHub license](https://img.shields.io/github/license/Printwhite/ClawSpark-AI?style=for-the-badge)](https://github.com/Printwhite/ClawSpark-AI)
 
-[![GitHub Stars](https://img.shields.io/github/stars/Printwhite/ClawSpark-AI?style=for-the-badge)](https://github.com/Printwhite/ClawSpark-AI/stargazers)
-[![Latest Release](https://img.shields.io/github/v/release/Printwhite/ClawSpark-AI?style=for-the-badge)](https://github.com/Printwhite/ClawSpark-AI/releases)
-[![License](https://img.shields.io/github/license/Printwhite/ClawSpark-AI?style=for-the-badge)](./LICENSE)
+![ClawSpark Preview](./assets/readme-showcase.svg)
 
-如果这个项目帮你省下了时间，欢迎点一个 Star。
-
-## 为什么这个项目值得 Star
-
-- 真正面向中文用户：全中文引导流程，信息清晰。
-- 无 VPN 友好：内置镜像与重试策略，安装成功率更高。
-- 多模型即插即用：DeepSeek / Claude / OpenAI / Gemini / OpenRouter / Ollama。
-- 支持自定义供应商：可直接接你的 OpenAI 兼容网关或 Anthropic 协议网关。
-- 一键卸载闭环：可在安装器里直接卸载 OpenClaw 与本地配置。
-- 安装过程可视化：实时日志、进度条、异常可重试。
+如果这个项目帮你节省了时间，欢迎点一个 Star。  
+你的 Star 会直接提升项目在 GitHub 的曝光和持续维护动力。
 
 ## 一键下载
 
-- Windows 安装包（推荐）
-  - [前往 Releases 下载最新 EXE](https://github.com/Printwhite/ClawSpark-AI/releases/latest)
+- 最新版本发布页：  
+  https://github.com/Printwhite/ClawSpark-AI/releases/latest
 
-## 功能概览
+- Windows 安装包（EXE）：  
+  在 Releases 中下载 `ClawSpark-AI-Setup-<version>.exe`
 
-- 环境检测：Node.js / npm / 磁盘空间 / 网络连通性
-- 模型提供方选择：内置 + 自定义
-- API 密钥校验：安装前校验，避免配置后才报错
-- 渠道配置：Web 控制台 + 常见 IM 渠道开关
-- 自动生成配置：`~/.openclaw/openclaw.json` 与 `.env`
-- 自动启动网关：默认本地地址 `http://127.0.0.1:18789`
-- 卸载功能：全局 CLI + 本地目录一键清理
+## 项目亮点
 
-## 快速开始（源码运行）
+- 无 VPN 友好：安装流程内置镜像和重试策略
+- 中文向导体验：从环境检测到安装完成全流程中文
+- 多模型支持：DeepSeek / Anthropic / OpenAI / Gemini / OpenRouter / Ollama
+- 自定义供应商：支持 OpenAI 兼容协议与 Anthropic 协议
+- API Key 预校验：减少“装完才发现 key 无效”
+- 卸载闭环：支持一键卸载和本地配置清理
+
+## 适用人群
+
+- 第一次接触 OpenClaw 的新手用户
+- 不想手动折腾命令行和配置文件的用户
+- 需要稳定安装流程的团队内部分发场景
+
+## 3 分钟快速开始
 
 ```bash
 npm install
 npm start
 ```
 
-## 构建
+安装器完成后，默认控制台地址：
+
+`http://127.0.0.1:18789`
+
+## 本地构建
 
 ```bash
 # Windows
@@ -54,50 +60,46 @@ npm run build:mac
 npm run build:linux
 ```
 
-构建产物默认输出到 `dist/`。
+构建产物默认输出到 `dist/` 目录。
+
+## 核心能力清单
+
+- 环境检测：Node.js / npm / 磁盘空间 / 网络可达性
+- 模型配置：内置模型 + 自定义模型供应商
+- 密钥管理：输入、校验、写入本地 `.env`
+- 渠道选择：Web 控制台及常见渠道开关
+- 安装日志：实时输出、可重试、可定位问题
+- 卸载能力：CLI 与本地目录统一清理
 
 ## 常见问题
 
-### 1. 为什么打不开 `http://localhost:3080/`？
+### 为什么打不开 `http://localhost:3080/`？
 
-当前版本默认控制台地址是：
+当前版本默认端口是 `18789`，请使用：
 
-- `http://127.0.0.1:18789`
+`http://127.0.0.1:18789`
 
-请优先使用这个地址。
+### 为什么会收到 GitHub Actions 的失败邮件？
 
-### 2. 安装卡在 npm 阶段怎么办？
+你收到的 Gmail 报错通常来自 Release 工作流构建失败。  
+可在这里查看详细状态：
 
-安装器已内置镜像和重试策略。你也可以手动检查：
+`https://github.com/Printwhite/ClawSpark-AI/actions`
 
-- Node.js 版本是否 >= 22
-- npm registry 网络连通性
-- 杀毒软件是否拦截 `npm` 或 `openclaw`
+### API Key 会被上传吗？
 
-### 3. 卸载命令超时怎么办？
+不会。Key 仅写入本机 `~/.openclaw/.env`。
 
-已在安装器中修复：
+## Roadmap
 
-- 延长卸载超时
-- 增加离线优先参数
-- 增加本地文件兜底删除逻辑
-
-## 安全说明
-
-- API Key 仅保存在本机 `~/.openclaw/.env`
-- 安装器不会把你的 Key 上传到项目服务器
-
-## 路线图
-
-- 增加可选主题与品牌皮肤
-- 增加更多渠道向导
+- 增加更多渠道接入向导
 - 增加离线包安装模式
+- 增加企业代理环境的一键诊断
 
 ## 贡献
 
-欢迎提交 Issue / PR。
-
-如果你希望这个项目持续维护，请给仓库一个 Star，这会直接提升项目可见度。
+欢迎提 Issue / PR。  
+如果你认可项目方向，欢迎给仓库点 Star。
 
 ## License
 
